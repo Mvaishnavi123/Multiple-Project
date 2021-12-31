@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        a{
+            color: #20ff3e;
+            text-decoration: none;
+        }
+        ol{
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.15em;
+        }
+        ul{
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.15em;
+        }
+        p{
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.15em;
+        }
+        strong{
+            font-size: 25px;
+        }
+        mark1{
+            color: #ed5a5a;
+        }
+        mark{
+            background-color:rgba(173, 230, 230, 0.918);
+            color: black;
+            padding: 2px 4px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.15em;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting the Website</title>
+</head>
+<body>
+    <h1>Hosting the website with domain registration process.</h1>
+    <p>Heroku is a hosting platform where you can deploy dynamic applications in Rails,PHP,Node.js and Python web applications.</p>
+    <br/>
+    <strong>Prerequisites</strong>
+    <p>In order to deploy a site you need a couple of things:</p>
+    <ol>
+        <li>Have git installed</li>
+        <li>Heroku Account - <a href="https://www.heroku.com/">sign up here</a></li>
+        <li><a href="https://toolbelt.heroku.com/">Download the Heroku Toolbelt</a> - a command line application for managing
+        your Heroku account.</li>
+        <li>Run Heroku login in your terminal or command prompt and fill in your heroku credentials</li>
+    </ol>
+    <strong>Deploying Your Site</strong>
+    <p>First, you need to navigate to your project in the commmand prompt.</p>
+    <mark>cd Projects/my-site</mark>
+    <p>If you’re happy with the state of your application – create an <mark1>index.php file.</mark1>We can trick Heroku to deploy a static site
+       by including 1 dynamic file.</p>
+    <p>The <mark1>index.php</mark1> file will be served by Heroku before your <mark1>index.html.</mark1>We need to make the browser redirect from 
+        <mark1>index.php</mark1> to <mark1>index.html</mark1>. We only need to include one line of PHP code.</p>
+    <mark>&lt;?php header( 'Location: /index.html' ) ;  ?&gt;</mark>
+    <p><b>Pro Tip: </b>Make sure there’s no spaces before the <mark1>&lt;?php</mark1> or else it won’t work!</p>
+    <p>Then we’ll use the command line tool called git to initialize or create a version of the site you want to deploy. To do that 
+        run the command:</p>
+    <mark>git init</mark>
+    <p><mark>git add .</mark></p>
+    <p>The <mark1>add .</mark1> means add all the files to the git repository.</p>
+    <p>Then you want to commit or save all the changes for your site. With a message describing what you’ve done.</p>
+    <mark>git commit -m "My site ready for deployment."</mark>
+    <p>Now you want to create your site on Heroku. If you’re already logged in (because you ran <mark1>heroku login</mark1> earlier), you can 
+        issue the following command:</p>
+    <mark>heroku apps:create web-testing-app</mark>
+    <p>Insert your desired name instead of <mark1>web-testing-app.</mark1></p>
+    <p>If the name isn’t taken you can deploy your site using <mark1>git.</mark1></p>
+    <mark>git push heroku master</mark>
+    <p>Once you see “remote: Verifying deploy…. done.”</p>
+    <p>You can now visit your site at https://&lt;whatever-name-you-selected&gt;.herokuapp.com/ or my example site here
+         <a href="https://web-testing-app.herokuapp.com/index.html">https://web-testing-app.herokuapp.com/index.html</a></p>
+    <p>If you want to add your own domain check out the <a href="https://devcenter.heroku.com/articles/custom-domains">Heroku documentation.</a></p>
+    <p>If you need to, make changes to your site of the following 3 commands.</p>
+    <p>Add the changes…</p>
+    <mark>git add .</mark>
+    <p>Save the changes…</p>
+    <mark>git commit -m "Add useful message"</mark>
+    <p>Then deploy…</p>
+    <mark>git push heroku master</mark>
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;">
+</script>
+</body>
+</html>

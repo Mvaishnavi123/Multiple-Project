@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Radio Button </title>
+</head>
+<body>
+    <div id= "color">
+        What background colour do you want ?
+        <br>
+        <input type="radio" name="color" value="radio" onClick="changeColour('b')">Blue
+        <br>
+        <input type="radio" name="color" value="radio" onClick="changeColour('r')">Red
+        <br>
+        <input type="radio" name="color" value="radio" onClick="changeColour('g')">Green
+        <br>
+                <input type="radio" name="color" value="radio" onClick="changeColour('o')">Orange
+        <br>
+                <input type="radio" name="color" value="radio" onClick="changeColour('y')">Yellow
+        <br>
+                <input type="radio" name="color" value="radio" onClick="changeColour('p')">Pink
+        <br>
+        </form>
+        </div>
+        <script>
+        function changeColour(value)
+        {
+            var color = document.body.style.backgroundColor;
+            switch(value)
+            {
+                case 'b':
+                    color = "blue";
+                break;
+                case 'r':
+                    color = "red";
+                break;
+                case 'g':
+                    color = "green";
+                break;
+                case 'o':
+                    color = "orange";
+                break;
+                case 'y':
+                    color = "yellow";
+                break;
+                case 'p':
+                    color = "pink";
+                break;
+            }
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+ </body>
+</html>
